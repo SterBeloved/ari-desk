@@ -3210,6 +3210,8 @@
  .cookie-paper{padding:16px}.cookie-heading{grid-template-columns:1fr}.cookie-heading>img{display:none}
  .cookie-paper h3{font-size:26px}.cookie-gallery{grid-template-columns:1fr;gap:16px}
 }
+
+#open-cookie{cursor:pointer;touch-action:manipulation;isolation:isolate}#open-cookie img,#open-cookie span{pointer-events:none}
 </style>
 <button class="edge-handle edge-top" aria-label="Show desk controls" aria-controls="desk-controls"
   aria-expanded="false">
@@ -3406,7 +3408,7 @@
   </header>
   <p class="creations-subtitle">Little ideas, turned into things you can play with.</p>
   <div class="creation-collection" id="creation-collection">
-    <div class="creation-objects"><button class="poetry-collectible" id="open-cookie" aria-label="Open Cookie Post project"><img src="assets/cookie-post/cookie-object.webp" alt="A lotus-stamped cookie on a dusty-blue floral paper doily, with a little sealed envelope" draggable="false"><span>Cookie Post</span></button><button class="poetry-collectible" id="open-poetry"
+    <div class="creation-objects"><button class="poetry-collectible" id="open-cookie" type="button" onclick="document.getElementById('creation-collection').hidden=true;['poetry-detail','textbuddy-detail','herbal-detail'].forEach(function(id){document.getElementById(id).hidden=true});document.getElementById('cookie-detail').hidden=false;document.getElementById('projects-dialog').scrollTop=0;" aria-label="Open Cookie Post project"><img src="assets/cookie-post/cookie-object.webp" alt="A lotus-stamped cookie on a dusty-blue floral paper doily, with a little sealed envelope" draggable="false"><span>Cookie Post</span></button><button class="poetry-collectible" id="open-poetry"
         aria-label="Open Tang Poetry GPT project"><img src="assets/poetry-scroll.png"
           alt="An ivory poetry scroll with dusty-blue flowers and a ribbon" draggable="false"><span>Tang Poetry
           GPT</span></button><button class="poetry-collectible" id="open-textbuddy"
@@ -3423,7 +3425,7 @@
     </div><small>Pick a little idea to unfold.</small>
   </div>
 <section class="poetry-detail" id="cookie-detail" aria-labelledby="cookie-title" hidden>
-<button class="creation-back" id="back-cookie">← Back to the collection</button>
+<button class="creation-back" id="back-cookie" type="button" onclick="document.getElementById('cookie-detail').hidden=true;document.getElementById('creation-collection').hidden=false;document.getElementById('projects-dialog').scrollTop=0;">← Back to the collection</button>
 <div class="cookie-paper"><div class="cookie-heading"><div><p class="cookie-kicker">Interactive design · Chinese culture · AI poetry</p>
 <h3 id="cookie-title">Cookie Post — Sealed with Sugar</h3><p><em>A little sweetness, made by you.</em></p>
 <p>An interactive cookie-design and digital greeting-card application that brings traditional Chinese motifs and the art of gift-giving into a playful, personalised experience.</p></div><img src="assets/cookie-post/cookie-object.webp" alt="A lotus cookie and a sealed letter"></div>
@@ -4113,27 +4115,6 @@
 </script>
 
 <script>
-// Cookie Post navigation.
-(()=>{
-const dialog=document.querySelector('#projects-dialog');
-const collection=document.querySelector('#creation-collection');
-const cookie=document.querySelector('#cookie-detail');
-const open=document.querySelector('#open-cookie');
-const back=document.querySelector('#back-cookie');
-open.addEventListener('click',()=>{
- collection.hidden=true;
- ['poetry-detail','textbuddy-detail','herbal-detail'].forEach(id=>document.getElementById(id).hidden=true);
- cookie.hidden=false;
- dialog.scrollTop=0;
- back.focus({preventScroll:true});
-});
-back.addEventListener('click',()=>{
- cookie.hidden=true;
- collection.hidden=false;
- dialog.scrollTop=0;
- open.focus({preventScroll:true});
-});
-dialog.addEventListener('close',()=>{cookie.hidden=true});
-})();
+document.getElementById('projects-dialog').addEventListener('close',function(){document.getElementById('cookie-detail').hidden=true});
 </script>
 </html>
