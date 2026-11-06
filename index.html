@@ -4112,4 +4112,28 @@
   })();
 </script>
 
+<script>
+// Cookie Post navigation.
+(()=>{
+const dialog=document.querySelector('#projects-dialog');
+const collection=document.querySelector('#creation-collection');
+const cookie=document.querySelector('#cookie-detail');
+const open=document.querySelector('#open-cookie');
+const back=document.querySelector('#back-cookie');
+open.addEventListener('click',()=>{
+ collection.hidden=true;
+ ['poetry-detail','textbuddy-detail','herbal-detail'].forEach(id=>document.getElementById(id).hidden=true);
+ cookie.hidden=false;
+ dialog.scrollTop=0;
+ back.focus({preventScroll:true});
+});
+back.addEventListener('click',()=>{
+ cookie.hidden=true;
+ collection.hidden=false;
+ dialog.scrollTop=0;
+ open.focus({preventScroll:true});
+});
+dialog.addEventListener('close',()=>{cookie.hidden=true});
+})();
+</script>
 </html>
