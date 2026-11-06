@@ -3212,6 +3212,25 @@
 }
 
 #open-cookie{cursor:pointer;touch-action:manipulation;isolation:isolate}#open-cookie img,#open-cookie span{pointer-events:none}
+
+/* Five paper slides, matching the existing project stationery. */
+#cookie-detail .cookie-story{padding:26px 30px}
+#cookie-detail .cookie-story>h3{margin:7px 0;font-size:30px}
+.cookie-tagline{margin:0 0 18px;color:#72818a}
+.cookie-slide[hidden]{display:none!important}
+.cookie-slide{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr);gap:26px;align-items:center;min-height:350px}
+.cookie-slide-copy h4{font-size:28px!important;line-height:1.25;margin:12px 0!important}
+.cookie-slide-copy p{font-size:17px;line-height:1.75}
+.cookie-slide figure{margin:0;min-width:0}
+.cookie-slide img{display:block;width:100%;height:350px;object-fit:contain}
+.cookie-slide-nav{display:flex;align-items:center;justify-content:center;gap:30px;margin:20px 0 12px;color:#43576a}
+.cookie-slide-nav button{font:30px var(--classical-serif);color:#43576a;background:#fffdf5;border:1px solid #b5c7ca;border-radius:50%;width:48px;height:48px;cursor:pointer;line-height:1}
+.cookie-slide-nav button:hover:not(:disabled){background:#e7f0ec}.cookie-slide-nav button:disabled{opacity:.3;cursor:default}
+.cookie-slide-nav button:focus-visible{outline:2px solid #6d919c;outline-offset:4px}
+#cookie-page{font-size:15px;letter-spacing:.16em;min-width:65px;text-align:center}
+.cookie-story-footer{border-top:1px solid #cdd9d6;padding-top:12px;display:flex;gap:22px;align-items:center;justify-content:space-between}
+.cookie-story-footer p{font-size:13px;line-height:1.6;max-width:590px;margin:0}.cookie-story-footer a{flex-shrink:0;font-size:15px}
+@media(max-width:700px){#cookie-detail .cookie-story{padding:18px 16px}#cookie-detail .cookie-story>h3{font-size:25px}.cookie-slide{grid-template-columns:1fr;gap:12px;min-height:0}.cookie-slide-copy h4{font-size:24px!important}.cookie-slide-copy p{font-size:16px}.cookie-slide img{height:260px}.cookie-story-footer{display:block}.cookie-slide-nav{margin:16px 0}.cookie-tagline{font-size:14px}}
 </style>
 <button class="edge-handle edge-top" aria-label="Show desk controls" aria-controls="desk-controls"
   aria-expanded="false">
@@ -3426,15 +3445,7 @@
   </div>
 <section class="poetry-detail" id="cookie-detail" aria-labelledby="cookie-title" hidden>
 <button class="creation-back" id="back-cookie" type="button" onclick="document.getElementById('cookie-detail').hidden=true;document.getElementById('creation-collection').hidden=false;document.getElementById('projects-dialog').scrollTop=0;">← Back to the collection</button>
-<div class="cookie-paper"><div class="cookie-heading"><div><p class="cookie-kicker">Interactive design · Chinese culture · AI poetry</p>
-<h3 id="cookie-title">Cookie Post — Sealed with Sugar</h3><p><em>A little sweetness, made by you.</em></p>
-<p>An interactive cookie-design and digital greeting-card application that brings traditional Chinese motifs and the art of gift-giving into a playful, personalised experience.</p></div><img src="assets/cookie-post/cookie-object.webp" alt="A lotus cookie and a sealed letter"></div>
-<h4>Create Something Personal</h4><p>Choose your dough and cookie shape, explore traditional Chinese motif stamps, turn your own illustrations into patterns, and decorate freely with icing and toppings. Finish with baking effects and personalised wrapping.</p>
-<h4>Poetry in a Letter</h4><p>Turn a personal wish into a little piece of poetry. An LLM API generates editable Chinese five-character verse inspired by your chosen occasion and message.</p>
-<h4>Sealed with Sugar, Sent with Love</h4><p>Combine your handmade cookie, personalised poem and heartfelt message into a digital greeting card. Export it as a PNG or send it by email to someone special.</p>
-<p><strong>My part</strong><br>I independently designed, developed and deployed the application, integrating the interactive cookie editor, LLM poetry generation, card export and email delivery.</p>
-<a class="cookie-demo" id="cookie-demo" href="https://sterbeloved.github.io/cookie-post/" target="_blank" rel="noopener noreferrer">Make your own · Live Demo ↗</a>
-<div class="cookie-gallery"><figure><img loading="lazy" src="assets/cookie-post/traditional-motifs.webp" alt="Traditional Chinese motifs, pressed into a little cookie."><figcaption>Traditional Chinese motifs, pressed into a little cookie.</figcaption></figure><figure><img loading="lazy" src="assets/cookie-post/free-decoration.webp" alt="Decorate freely with icing, patterns and toppings."><figcaption>Decorate freely with icing, patterns and toppings.</figcaption></figure><figure><img loading="lazy" src="assets/cookie-post/poetry-and-sending.webp" alt="Poetry in a Letter — editable five-character verse generated with an LLM API."><figcaption>Poetry in a Letter — editable five-character verse generated with an LLM API.</figcaption></figure><figure><img loading="lazy" src="assets/cookie-post/greeting-card.webp" alt="A personalised greeting card, ready to keep or share."><figcaption>A personalised greeting card, ready to keep or share.</figcaption></figure><figure><img loading="lazy" src="assets/cookie-post/email-delivery.webp" alt="Sealed with sugar — the greeting card delivered by email."><figcaption>Sealed with sugar — the greeting card delivered by email.</figcaption></figure></div></div></section>
+<div class="cookie-paper cookie-story"><p class="cookie-kicker">Interactive design · Chinese culture · AI poetry</p><h3 id="cookie-title">Cookie Post — Sealed with Sugar</h3><p class="cookie-tagline"><em>A little sweetness, made by you.</em></p><div class="cookie-slides"><article class="cookie-slide" data-cookie-slide="0"  aria-labelledby="cookie-step-0"><div class="cookie-slide-copy"><p class="cookie-kicker">A little journey · 01 / 05</p><h4 id="cookie-step-0">Create Something Personal</h4><p>Choose a dough and shape, then explore traditional Chinese motif stamps or transform your own illustration into a cookie pattern.</p></div><figure><img src="assets/cookie-post/traditional-motifs.webp" alt="Traditional Chinese motif stamps in the cookie editor" loading="eager"></figure></article><article class="cookie-slide" data-cookie-slide="1" hidden aria-labelledby="cookie-step-1"><div class="cookie-slide-copy"><p class="cookie-kicker">A little journey · 02 / 05</p><h4 id="cookie-step-1">A Little Creative Freedom</h4><p>Decorate freely with icing pens, colours and toppings. Adjust the baking effect and make every little detail your own.</p></div><figure><img src="assets/cookie-post/free-decoration.webp" alt="Free decoration with icing and toppings" loading="lazy"></figure></article><article class="cookie-slide" data-cookie-slide="2" hidden aria-labelledby="cookie-step-2"><div class="cookie-slide-copy"><p class="cookie-kicker">A little journey · 03 / 05</p><h4 id="cookie-step-2">Poetry in a Letter</h4><p>Turn a personal wish into poetry. An LLM API generates editable Chinese five-character verse inspired by your chosen occasion and message.</p></div><figure><img src="assets/cookie-post/poetry-and-sending.webp" alt="AI poetry generation based on a personal wish" loading="lazy"></figure></article><article class="cookie-slide" data-cookie-slide="3" hidden aria-labelledby="cookie-step-3"><div class="cookie-slide-copy"><p class="cookie-kicker">A little journey · 04 / 05</p><h4 id="cookie-step-3">Sealed with Sugar</h4><p>Bring your cookie, poem and heartfelt message together. Choose personalised wrapping to create a digital greeting card, then export it as a PNG.</p></div><figure><img src="assets/cookie-post/greeting-card.webp" alt="A personalised cookie greeting card" loading="lazy"></figure></article><article class="cookie-slide" data-cookie-slide="4" hidden aria-labelledby="cookie-step-4"><div class="cookie-slide-copy"><p class="cookie-kicker">A little journey · 05 / 05</p><h4 id="cookie-step-4">Sent with Love</h4><p>Send your finished greeting card by email to someone special — a little sweetness, made by you, delivered to their inbox.</p></div><figure><img src="assets/cookie-post/email-delivery.webp" alt="The cookie greeting card received by email" loading="lazy"></figure></article></div><nav class="cookie-slide-nav" aria-label="Cookie Post presentation"><button type="button" id="cookie-prev" aria-label="Previous step" disabled>←</button><span id="cookie-page" role="status" aria-live="polite">01 / 05</span><button type="button" id="cookie-next" aria-label="Next step">→</button></nav><footer class="cookie-story-footer"><p><strong>My part</strong> · I independently designed, developed and deployed the application, integrating the cookie editor, LLM poetry generation, card export and email delivery.</p><a class="cookie-demo" id="cookie-demo" href="https://sterbeloved.github.io/cookie-post/" target="_blank" rel="noopener noreferrer">Make your own · Live Demo ↗</a></footer></div></section>
   <section class="poetry-detail" id="poetry-detail" aria-labelledby="poetry-title" hidden><button class="creation-back"
       id="back-creations">← Back to the collection</button>
     <div class="poetry-layout">
@@ -4116,5 +4127,16 @@
 
 <script>
 document.getElementById('projects-dialog').addEventListener('close',function(){document.getElementById('cookie-detail').hidden=true});
+</script>
+<script>
+(function(){
+ var slides=Array.from(document.querySelectorAll('[data-cookie-slide]'));
+ var index=0,prev=document.getElementById('cookie-prev'),next=document.getElementById('cookie-next'),page=document.getElementById('cookie-page');
+ function show(i){index=Math.max(0,Math.min(slides.length-1,i));slides.forEach(function(slide,n){slide.hidden=n!==index});prev.disabled=index===0;next.disabled=index===slides.length-1;page.textContent=String(index+1).padStart(2,'0')+' / 05'}
+ prev.addEventListener('click',function(){show(index-1)});next.addEventListener('click',function(){show(index+1)});
+ document.getElementById('cookie-detail').addEventListener('keydown',function(e){if(e.target.matches('input,textarea,select'))return;if(e.key==='ArrowLeft'){e.preventDefault();show(index-1)}if(e.key==='ArrowRight'){e.preventDefault();show(index+1)}});
+ document.getElementById('open-cookie').addEventListener('click',function(){show(0)});
+ show(0);
+})();
 </script>
 </html>
